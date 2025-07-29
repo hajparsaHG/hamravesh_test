@@ -78,8 +78,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'zFjZnMfsjP4Hig4Q78yg',
-        'HOST': 'my-postgres1-proxy.mphajighasemi.svc',
+        'PASSWORD': 'liuc7hfCLgwGU7duPGqD',
+        'HOST': 'my-postgres-gitrepo-proxy.mphajighasemi-test-ns.svc',
         'PORT': '5432'
     }
 }
