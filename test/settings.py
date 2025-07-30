@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'my-postgres-dockerimage',
         'USER': 'postgres',
-        'PASSWORD': 'liuc7hfCLgwGU7duPGqD',
-        'HOST': 'my-postgres-gitrepo-proxy.mphajighasemi-test-ns.svc',
+        'PASSWORD': 'postgres',
+        'HOST': 'my-postgres-dockerimage.mphajighasemi-test-ns.svc,
         'PORT': '5432'
     }
 }
