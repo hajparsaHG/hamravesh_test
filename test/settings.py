@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'my-postgres-dockerimage',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'my-postgres-dockerimage.mphajighasemi-test-ns.svc,
+        'HOST': 'my-postgres-dockerimage.mphajighasemi-test-ns.svc',
         'PORT': '5432'
     }
 }
