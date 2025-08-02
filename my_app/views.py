@@ -19,3 +19,6 @@ def write_random_string(request):
 def read_latest_string(request):
     latest = RandomString.objects.last()
     return JsonResponse({'latest_string': latest.text if latest else None})
+
+def sample_api(request):
+    return JsonResponse({"message": "Hello from Django!"})
