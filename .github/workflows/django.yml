@@ -1,10 +1,10 @@
 jobs:
-  darkube_build_back-github-actions_mphajighasemi_hamravesh-c13:
+  darkube_build_test_parsahajighasemi_hamravesh-c13:
     container:
       image: hamravesh/darkube-cli:v1.1
       options: --user root
     env:
-      IMAGE_NAME: registry.hamdocker.ir/mphajighasemi/back-github-actions
+      IMAGE_NAME: registry.hamdocker.ir/parsahajighasemi/test
     runs-on: ubuntu-latest
     steps:
     - name: checkout commit
@@ -13,15 +13,15 @@ jobs:
       run: 'darkube build --push -t $IMAGE_NAME:${GITHUB_SHA:0:7} -t $IMAGE_NAME:${GITHUB_REF_NAME}
         --docker-auth-config ${{secrets.DOCKER_AUTH_CONFIG}} --workdir . --file ./Dockerfile
         --build-context . '
-  darkube_deploy_back-github-actions_mphajighasemi_hamravesh-c13:
+  darkube_deploy_test_parsahajighasemi_hamravesh-c13:
     container: hamravesh/darkube-cli:v1.1
-    needs: darkube_build_back-github-actions_mphajighasemi_hamravesh-c13
+    needs: darkube_build_test_parsahajighasemi_hamravesh-c13
     runs-on: ubuntu-latest
     steps:
     - name: darkube-cli deploy
-      run: darkube deploy --token ${{secrets.DEPLOY_TOKEN_BACK_GITHUB_ACTIONS_MPHAJIGHASEMI_HAMRAVESH_C13}}
-        --app-id ${{secrets.APP_ID_BACK_GITHUB_ACTIONS_MPHAJIGHASEMI_HAMRAVESH_C13}}
-        --image-tag ${GITHUB_SHA:0:7} --job-id ${GITHUB_RUN_ID}
+      run: darkube deploy --token ${{secrets.DEPLOY_TOKEN_TEST_PARSAHAJIGHASEMI_HAMRAVESH_C13}}
+        --app-id ${{secrets.APP_ID_TEST_PARSAHAJIGHASEMI_HAMRAVESH_C13}} --image-tag
+        ${GITHUB_SHA:0:7} --job-id ${GITHUB_RUN_ID}
 'on':
   push:
     branches:
